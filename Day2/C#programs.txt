@@ -1,0 +1,528 @@
+//basic Program in C#
+using System;
+class HelloWorld {
+  static void Main() {
+      Console.WriteLine("Enter greetings Message : ");
+      string greetings=Console.ReadLine();
+      Console.WriteLine("Enter your ID ");
+      int id=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Hi "+id+" "+greetings);
+  }
+}
+
+
+
+INPUT :
+Enter greetings Message : 
+Welocme to Wipro
+Enter your ID 
+1001
+
+OUTPUT:
+
+Hi 1001 Welocme to Wipro
+
+
+//Program to illustrate use of  Convert.ToInt32 
+
+using System;
+class ExampleToConvetToIntExplicitly {
+  static void Main() {
+    
+      Console.WriteLine("Enter Two Numbers ");
+      int num1=Convert.ToInt32(Console.ReadLine());
+ 	int num2=Convert.ToInt32(Console.ReadLine());
+	int sum=num1+num2;
+	Console.WriteLine("sum :"+sum);
+  }
+}
+
+INPUT:
+Enter Two Numbers 
+10
+20
+OUTPUT:
+sum :30
+
+
+//program to Grade Students on the basis of Average of Marks
+
+
+using System;
+class GradeStudentsBasedOnAverageOfMarks {
+  static void Main() {
+      Console.WriteLine("Enter NumberofMarks   : ");
+      int  numberofMarks =Convert.ToInt32(Console.ReadLine());
+      int sumOFAllMarks =0;
+      int count=numberofMarks;
+            Console.WriteLine("Enter "+numberofMarks+" number of  Marks");
+      while(count>0)
+      {
+          int  currentMarks =Convert.ToInt32(Console.ReadLine());
+          sumOFAllMarks+=currentMarks;
+          count--;
+      }
+      int averageOfAllMarks=sumOFAllMarks/numberofMarks;
+      string resultingGrade=(averageOfAllMarks>=70 && averageOfAllMarks <=75)?"Excellent":
+      (averageOfAllMarks>=60 && averageOfAllMarks <=70)?"Good":averageOfAllMarks<45 ?"Fail":"Pass";
+      
+      Console.WriteLine("averageOfAllMarks :"+ averageOfAllMarks);
+
+    Console.WriteLine("resultingGrade :" +resultingGrade);
+  }
+}
+
+Input :
+Enter NumberofMarks   : 
+5
+Enter 5 number of  Marks
+75
+75
+75
+75
+75
+
+Output:
+averageOfAllMarks :75
+resultingGrade :Excellent
+
+Input :
+Enter NumberofMarks   : 
+5
+Enter 5 number of  Marks
+65
+65
+65
+65
+65
+
+Output:
+averageOfAllMarks :65
+resultingGrade :Good
+
+Input :
+Enter NumberofMarks   : 
+5
+Enter 5 number of  Marks
+35
+35
+35
+35
+35
+
+Output:
+averageOfAllMarks :35
+resultingGrade :Fail
+
+Input :
+Enter NumberofMarks   : 
+5
+Enter 5 number of  Marks
+55
+55
+55
+55
+55
+
+Output:
+averageOfAllMarks :55
+resultingGrade :Pass
+
+
+//Program to return SumOfDigits of given Number
+
+using System;
+class SumOfDigitsProgram{
+    
+    
+    public static int  DigitSum(int n)
+    {
+        int sumOfDigits=0;
+        while(n>0)
+        {
+            int currentLastDigit=n%10;
+            sumOfDigits+=currentLastDigit;
+            n/=10;
+        }
+        return sumOfDigits;
+    }
+  static void Main() {
+      Console.WriteLine("Enter Number :");
+      int num=Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("sumOfDigits :"+DigitSum(num));
+      
+  }
+}
+
+INPUT :
+
+Enter Number : 
+123
+
+OUTPUT:
+sumOfDigits :6
+
+
+
+
+//Program to Compute factorial of given number in Recursive Approach  
+
+using System;
+class FactorialOfNumberRecursiveApproach {
+    
+    
+    public static int  FactorialOfNumber(int n)
+    {
+       if(n<=1)
+       {
+           return 1;
+       }
+        return n*FactorialOfNumber(n-1);
+    }
+  static void Main() {
+      Console.WriteLine("Enter Number :");
+      int num=Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("FactorialOfNumber {0} = {1}",num,FactorialOfNumber(num));
+      
+  }
+}
+
+INPUT:
+Enter Number :
+5
+
+OUTPUT:
+FactorialOfNumber 5 = 120
+
+
+
+
+//program to print student informatin and average marks
+using System;
+using System.Collections.Generic;
+class StudentInformation {
+  static void Main() {
+   
+   Console.WriteLine("enter your Name :");
+   string name=Console.ReadLine();
+      Console.WriteLine("enter your adress :");
+      
+    string address=Console.ReadLine();
+      Console.WriteLine("enter your rollNo :");
+      
+    int rollNo=Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("enter your date of Birth in DD/MM/YYYY fromat  :");
+    string mydob=Console.ReadLine();
+    
+    string mydobYear=Convert.ToDateTime(mydob).Year.ToString();
+    
+    string currentYear= DateTime.Now.Year.ToString();
+    
+    Console.WriteLine("enter Number of Marks :");
+    int n=Convert.ToInt32(Console.ReadLine());
+    decimal sum=0;
+    int i=1;
+    
+    List<int> marks= new List<int>();
+    
+    Console.WriteLine($"enter your {n}  Subject Marks : ");
+        
+    while(i<=n)
+    {
+            int marksForSubject=Convert.ToInt32(Console.ReadLine());
+           
+            marks.Add(marksForSubject);
+            sum+=marksForSubject;
+            
+        i++;
+    }
+    i=1;
+    
+    
+    Console.WriteLine("Basic Info of Student ");
+    Console.WriteLine("Name :"+name);
+    Console.WriteLine("RollNo :"+rollNo);
+    Console.WriteLine("Address :"+address);
+    Console.WriteLine($"Age : {Convert.ToInt32(currentYear)-Convert.ToInt32(mydobYear)}");
+   
+    
+ foreach(int marksForSubject in marks)
+ {
+        Console.WriteLine($"marksForSubject_{i} ={marksForSubject}");
+         i++;
+ }
+ 
+ Console.WriteLine("Average Marks of Student :"+Convert.ToDouble(sum/n));
+    
+ 
+
+    
+   
+  
+  }
+}
+INPUT:
+
+enter your Name :
+Akhil
+enter your adress :
+Hyderabad
+enter your rollNo :
+101
+enter your date of Birth in DD/MM/YYYY fromat  :
+03/08/2002
+enter Number of Marks :
+5
+enter your 5  Subject Marks : 
+10
+10
+20
+30
+40
+
+OUTPUT:
+
+Basic Info of Student 
+Name :Akhil
+RollNo :101
+Address :Hyderabad
+Age : 22
+marksForSubject_1 =10
+marksForSubject_2 =10
+marksForSubject_3 =20
+marksForSubject_4 =30
+marksForSubject_5 =40
+Average Marks of Student :22
+
+
+
+
+
+using System;
+class HelloWorld {
+    
+    struct  Employee{
+        public int empId;
+        public int companyId;
+        
+    }
+     
+ 
+   //program to illustrate use Refernce type using class objects
+  static void Main() {
+    Console.WriteLine("Refernce and Value Types using class and struct");
+   
+    
+    Employee employee1 =new Employee();
+    employee1.empId=100;
+    employee1.companyId=5000;
+    
+     Employee employee2 =employee1;
+    
+    Console.WriteLine("Before updating Employee 2 ");
+    Console.WriteLine("employee1.empId :" +employee1.empId);
+    Console.WriteLine("employee1.companyId :" + employee1.companyId);
+    Console.WriteLine();
+     Console.WriteLine("employee2.empId :"+employee2.empId);
+    Console.WriteLine("employee2.companyId :"+employee2.companyId);
+
+  
+       employee2.empId=200;
+    employee2.companyId=60000; 
+     Console.WriteLine("After updating Employee 2 ");
+    Console.WriteLine("employee1.empId :" +employee1.empId);
+    Console.WriteLine("employee1.companyId :" + employee1.companyId);
+    Console.WriteLine();
+     Console.WriteLine("employee2.empId :"+employee2.empId);
+    Console.WriteLine("employee2.companyId :"+employee2.companyId);
+    
+    
+  }
+}
+
+Output:
+Refernce and Value Types using class
+Before updating Employee 2 
+employee1.empId :100
+employee1.companyId :5000
+
+employee2.empId :100
+employee2.companyId :5000
+After updating Employee 2 
+employee1.empId :200
+employee1.companyId :60000
+
+employee2.empId :200
+employee2.companyId :60000
+
+
+
+
+  //program to illustrate use of value type using  structure (struct)
+using System;
+class HelloWorld {
+    
+    struct  Employee{
+        public int empId;
+        public int companyId;
+        
+    }
+     
+ 
+    
+  static void Main() {
+    Console.WriteLine("Refernce and Value Types using struct");
+   
+    
+    Employee employee1 =new Employee();
+    employee1.empId=100;
+    employee1.companyId=5000;
+    
+     Employee employee2 =employee1;
+    
+    Console.WriteLine("Before updating Employee 2 ");
+    Console.WriteLine("employee1.empId :" +employee1.empId);
+    Console.WriteLine("employee1.companyId :" + employee1.companyId);
+    Console.WriteLine();
+     Console.WriteLine("employee2.empId :"+employee2.empId);
+    Console.WriteLine("employee2.companyId :"+employee2.companyId);
+
+  
+       employee2.empId=200;
+    employee2.companyId=60000; 
+     Console.WriteLine("After updating Employee 2 ");
+    Console.WriteLine("employee1.empId :" +employee1.empId);
+    Console.WriteLine("employee1.companyId :" + employee1.companyId);
+    Console.WriteLine();
+     Console.WriteLine("employee2.empId :"+employee2.empId);
+    Console.WriteLine("employee2.companyId :"+employee2.companyId);
+    
+    
+  }
+}
+
+OUTPUT:
+
+Refernce and Value Types using struct
+Before updating Employee 2 
+employee1.empId :100
+employee1.companyId :5000
+
+employee2.empId :100
+employee2.companyId :5000
+After updating Employee 2 
+employee1.empId :100
+employee1.companyId :5000
+
+employee2.empId :200
+employee2.companyId :60000
+
+
+
+
+
+using System;
+class HelloWorld {
+    
+    
+      public static int  ComputeFibonacciNUmber(int n)
+    {
+      int a=0;
+      int b=1;
+      int c=0;
+        Console.WriteLine($"{1}st Fibonacci Number  {c}");
+      for(int i=1;i<n;i++)
+      {
+           c=a+b;
+           Console.WriteLine($"{i+1}th Fibonacci Number  {c}");
+           a=b;
+           b=c;
+          
+          
+      }
+      return c;
+    }
+   
+    
+  static void Main() {
+	Console.WriteLine("Enter Number");
+    int num= Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("ComputeFibonacciNUmber {0} = {1}",num,ComputeFibonacciNUmber(num));
+      
+   
+  }
+}
+
+INPUT:
+Enter Number
+5
+OUTPUT:
+1st Fibonacci Number  0
+2th Fibonacci Number  1
+3th Fibonacci Number  2
+4th Fibonacci Number  3
+5th Fibonacci Number  5
+ComputeFibonacciNUmber 5 = 5
+
+
+
+
+
+//program to FindNextNuberSeries 
+using System;
+using System.Collections.Generic;
+class FindNextNumberInSeries{
+    
+  public static   int NextNumberInSeries(List<int> myDs,int oddValue,int evenValue)
+    {
+        int ans=-1;
+        if((myDs.Count)%2==0){
+            ans= myDs[myDs.Count-1]+(evenValue); //even case
+        }
+        else if((myDs.Count)%2!=0){
+            
+           ans= myDs[myDs.Count-1]+(oddValue); //odd case 
+        }
+        return ans;
+    }
+    
+    public static void Main()
+    {
+        List<int> arr=new List<int> ();
+         Console.WriteLine("Enter Number N");
+        int n=Convert.ToInt32(Console.ReadLine());
+         Console.WriteLine($"Enter {n} Numbers ");
+        for(int i=0;i<n;i++)
+        {
+            int x=Convert.ToInt32(Console.ReadLine());
+            arr.Add(x);
+        }
+    
+        
+        // foreach(int val in arr)
+        // {
+        //     Console.Write(val+" ,");
+        // }
+
+ 	// series 1=7,10,8,11,9,12  oddLength=+3 evenLength=-3
+     //series 2=22,21,23,22,24,23 oddLength=+3 evenLength=-3
+     //series 3=31,29,24,22,17 oddLength=-2 evenLength=-5
+         Console.Write("NextNumberInSeries :"+NextNumberInSeries(arr,-2,-5));
+        
+    }
+}
+
+
+
+INPUT :
+Enter Number N
+5
+Enter 5 Numbers 
+31
+29
+24
+22
+17
+OUTPUT:
+NextNumberInSeries :15
+
