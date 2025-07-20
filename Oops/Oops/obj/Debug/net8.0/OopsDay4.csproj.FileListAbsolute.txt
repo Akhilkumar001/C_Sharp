@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\Oops\Oops\bin\Debug\net8.0\OopsDay4.exe
+C:\Users\Administrator\source\repos\Oops\Oops\bin\Debug\net8.0\OopsDay4.deps.json
+C:\Users\Administrator\source\repos\Oops\Oops\bin\Debug\net8.0\OopsDay4.runtimeconfig.json
+C:\Users\Administrator\source\repos\Oops\Oops\bin\Debug\net8.0\OopsDay4.dll
+C:\Users\Administrator\source\repos\Oops\Oops\bin\Debug\net8.0\OopsDay4.pdb
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.dll
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\refint\OopsDay4.dll
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.pdb
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\OopsDay4.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\Oops\Oops\obj\Debug\net8.0\ref\OopsDay4.dll
